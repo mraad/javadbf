@@ -351,6 +351,12 @@ public class DBFWriter extends DBFBase implements java.io.Closeable {
 
     }
 
+    /**
+     * Write record header.
+     *
+     * @param dataOutput The data output stream.
+     * @throws IOException If I/O exception.
+     */
     public void writeRecordHeader(DataOutput dataOutput) throws IOException {
         dataOutput.write((byte) ' ');
     }
@@ -483,10 +489,9 @@ public class DBFWriter extends DBFBase implements java.io.Closeable {
      *
      * @return the underlying RandomAccessFile
      */
-    protected RandomAccessFile getRamdonAccessFile() {
+    protected RandomAccessFile getRandomAccessFile() {
         return this.raf;
     }
-
 
     /**
      * Writes the set data to the OutputStream.
