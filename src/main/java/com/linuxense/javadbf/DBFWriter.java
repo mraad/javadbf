@@ -116,7 +116,6 @@ public class DBFWriter extends DBFBase implements java.io.Closeable {
         this(dbfFile, null);
     }
 
-
     /**
      * Creates a DBFWriter which can append to records to an existing DBF file.
      *
@@ -166,6 +165,13 @@ public class DBFWriter extends DBFBase implements java.io.Closeable {
         }
 
         this.recordCount = this.header.numberOfRecords;
+    }
+
+    /**
+     * @return The record count.
+     */
+    public int getRecordCount() {
+        return this.recordCount;
     }
 
     /**
@@ -291,9 +297,14 @@ public class DBFWriter extends DBFBase implements java.io.Closeable {
                 writeRecord(this.raf, values);
                 this.recordCount++;
             } catch (IOException e) {
-                throw new DBFException("Error occured while writing record. " + e.getMessage(), e);
+                throw new DBFException("Error occurred while writing record. " + e.getMessage(), e);
             }
         }
+    }
+
+    public void writeBytes(byte[] bytes) throws IOException {
+        this.raf.write(bytes);
+        this.recordCount++;
     }
 
     private void writeToStream(OutputStream out) {
@@ -368,8 +379,7 @@ public class DBFWriter extends DBFBase implements java.io.Closeable {
      * @param objectArray Array of objects.
      * @throws IOException If I/O exception.
      */
-    public void writeRecord(DataOutput dataOutput, Object[] objectArray) throws IOException {
-        // dataOutput.write((byte) ' ');
+    private void writeRecord(DataOutput dataOutput, Object[] objectArray) throws IOException {
         writeRecordHeader(dataOutput);
         for (int j = 0; j < this.header.fieldArray.length; j++) {
             /* iterate through fields */
