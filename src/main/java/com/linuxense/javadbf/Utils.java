@@ -164,11 +164,11 @@ public final class Utils {
 	 * @param fieldLength field size
 	 * @param sizeDecimalPart sizeDecimalPart
 	 * @return byte[] to store in the file
-	 * @deprecated Use {@link DBFUtils#doubleFormating(Number, Charset, int, int)}
+	 * @deprecated Use {@link DBFUtils#doubleFormatting(Number, Charset, int, int)}
 	 */
 	@Deprecated
 	public static byte[] doubleFormating(Number num, Charset charset, int fieldLength, int sizeDecimalPart) {
-		return DBFUtils.doubleFormating(num.doubleValue(), charset, fieldLength, sizeDecimalPart);
+		return DBFUtils.doubleFormatting(num.doubleValue(), charset, fieldLength, sizeDecimalPart);
 	}
 
 	/**
@@ -178,11 +178,11 @@ public final class Utils {
 	 * @param fieldLength field size
 	 * @param sizeDecimalPart sizeDecimalPart
 	 * @return byte[] to store in the file
-	 * @deprecated Use {@link DBFUtils#doubleFormating(Number, Charset, int, int)}
+	 * @deprecated Use {@link DBFUtils#doubleFormatting(Number, Charset, int, int)}
 	 */
 	@Deprecated
 	public static byte[] doubleFormating(Double doubleNum, Charset charset, int fieldLength, int sizeDecimalPart) {
-		return DBFUtils.doubleFormating(doubleNum, charset, fieldLength, sizeDecimalPart);
+		return DBFUtils.doubleFormatting(doubleNum, charset, fieldLength, sizeDecimalPart);
 	}
 
 
@@ -333,7 +333,7 @@ public final class Utils {
 	 * @param sizeDecimalPart sizeDecimalPart
 	 * @return byte[] to store in the file
 	 * @throws UnsupportedEncodingException since no charset is used, no excpetion is thrown
-	 * @deprecated Use {@link DBFUtils#doubleFormating(Number, Charset, int, int)}
+	 * @deprecated Use {@link DBFUtils#doubleFormatting(Number, Charset, int, int)}
 	 */
 	@Deprecated
 	public static byte[] doubleFormating(Number num, String characterSetName, int fieldLength, int sizeDecimalPart)
@@ -348,7 +348,7 @@ public final class Utils {
 	 * @param sizeDecimalPart sizeDecimalPart
 	 * @return byte[] to store in the file
 	 * @throws UnsupportedEncodingException since no charset is used, no excpetion is thrown
-	 * @deprecated Use {@link DBFUtils#doubleFormating(Number, Charset, int, int)}
+	 * @deprecated Use {@link DBFUtils#doubleFormatting(Number, Charset, int, int)}
 	 */
 	@Deprecated
 	public static byte[] doubleFormating(Double doubleNum, String characterSetName, int fieldLength, int sizeDecimalPart)

@@ -238,7 +238,7 @@ public final class DBFUtils {
      * @return bytes to write to the dbf file
      */
 
-    public static byte[] doubleFormating(Number num, Charset charset, int fieldLength, int sizeDecimalPart) {
+    public static byte[] doubleFormatting(Number num, Charset charset, int fieldLength, int sizeDecimalPart) {
         int sizeWholePart = fieldLength - (sizeDecimalPart > 0 ? sizeDecimalPart + 1 : 0);
 
         StringBuilder format = new StringBuilder(fieldLength);

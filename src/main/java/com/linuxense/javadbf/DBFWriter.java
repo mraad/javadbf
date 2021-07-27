@@ -418,7 +418,7 @@ public class DBFWriter extends DBFBase implements java.io.Closeable {
     }
 
     public void writeNumeData(DataOutput dataOutput, int j, Number data) throws IOException {
-        dataOutput.write(DBFUtils.doubleFormating(data, getCharset(), this.header.fieldArray[j].getLength(), this.header.fieldArray[j].getDecimalCount()));
+        dataOutput.write(DBFUtils.doubleFormatting(data, getCharset(), this.header.fieldArray[j].getLength(), this.header.fieldArray[j].getDecimalCount()));
     }
 
     public void writeNume(DataOutput dataOutput, Object[] objectArray, int j) throws IOException {
