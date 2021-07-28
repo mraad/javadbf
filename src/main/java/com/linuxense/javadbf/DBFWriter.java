@@ -302,6 +302,12 @@ public class DBFWriter extends DBFBase implements java.io.Closeable {
         }
     }
 
+    /**
+     * Write bytes to open file.
+     *
+     * @param bytes the bytes to write.
+     * @throws IOException If I/O exception.
+     */
     public void writeBytes(byte[] bytes) throws IOException {
         this.raf.write(bytes);
         this.recordCount++;
